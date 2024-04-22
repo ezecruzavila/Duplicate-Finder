@@ -1,4 +1,4 @@
-package org.duplicateFinder;
+package org.duplicateFinder.entities;
 
 import lombok.Getter;
 import lombok.Setter;

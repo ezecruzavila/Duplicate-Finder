@@ -1,4 +1,4 @@
-package org.duplicateFinder;
+package org.duplicateFinder.utils;
 
 public enum Accuracy {
     EXACT("Exact"),

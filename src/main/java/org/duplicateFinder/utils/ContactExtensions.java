@@ -1,7 +1,7 @@
-package org.duplicateFinder.extensions;
+package org.duplicateFinder.utils;
 
 import org.apache.poi.ss.usermodel.Row;
-import org.duplicateFinder.Contact;
+import org.duplicateFinder.entities.Contact;
 
 public class ContactExtensions {
 

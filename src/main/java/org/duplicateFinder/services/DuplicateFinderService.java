@@ -4,11 +4,11 @@ import lombok.experimental.ExtensionMethod;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.duplicateFinder.Accuracy;
-import org.duplicateFinder.Contact;
-import org.duplicateFinder.DuplicateAccuracy;
-import org.duplicateFinder.DuplicateContact;
-import org.duplicateFinder.extensions.ContactExtensions;
+import org.duplicateFinder.entities.Contact;
+import org.duplicateFinder.entities.DuplicateAccuracy;
+import org.duplicateFinder.entities.DuplicateContact;
+import org.duplicateFinder.utils.Accuracy;
+import org.duplicateFinder.utils.ContactExtensions;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -23,9 +23,13 @@ import java.util.List;
 public class DuplicateFinderService {
 
     @Value("${filename}")
-    String filename;
+    private final String filename;
 
-    private List<Contact> getContacts() throws IOException {
+    public DuplicateFinderService(String filename) {
+        this.filename = filename;
+    }
+
+    public List<Contact> getContacts() throws IOException {
         Workbook workbook = this.getWorkbook();
         Sheet sheet = workbook.getSheetAt(0);
         int rowsCount = sheet.getPhysicalNumberOfRows();

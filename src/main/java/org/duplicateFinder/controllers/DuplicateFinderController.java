@@ -1,6 +1,6 @@
 package org.duplicateFinder.controllers;
 
-import org.duplicateFinder.DuplicateAccuracy;
+import org.duplicateFinder.entities.DuplicateAccuracy;
 import org.duplicateFinder.services.DuplicateFinderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
